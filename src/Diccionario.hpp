@@ -23,9 +23,11 @@ private:
 
 
 template<class Clave, class Valor>
+Diccionario<Clave, Valor>::Diccionario(){}
+
+template<class Clave, class Valor>
 Diccionario<Clave, Valor>::Asociacion::Asociacion(Clave k, Valor v): clave(k), valor(v) {
 }
-
 
 template<class Clave, class Valor>
 void Diccionario<Clave, Valor>::definir(Clave k, Valor v) {

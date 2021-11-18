@@ -1,6 +1,6 @@
 #include <cassert>
 #include "Diccionario.h"
-#include "DIccionario.hpp"
+#include "Diccionario.hpp"
 
 
 Diccionario::Diccionario() {

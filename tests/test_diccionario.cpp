@@ -3,7 +3,6 @@
 
 #if EJ >= 5
 TEST(diccionario, dicc_int_int) {
-
 	Diccionario<int, int> d;
 	ASSERT_FALSE(d.def(1));
 	ASSERT_FALSE(d.def(2));

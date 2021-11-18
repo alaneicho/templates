@@ -30,6 +30,29 @@ TEST(diccionario, dicc_int_int) {
 #if EJ >= 6
 
 // Agregar un test para diccionario con clave string y valor bool.
+TEST(diccionario, dicc_string_bool) {
+	Diccionario<std::string, bool> d;
+	ASSERT_FALSE(d.def("1"));
+	ASSERT_FALSE(d.def("2"));
+	ASSERT_FALSE(d.def("3"));
+	d.definir("1", true);
+	ASSERT_TRUE(d.def("1"));
+	ASSERT_FALSE(d.def("2"));
+	ASSERT_FALSE(d.def("3"));
+	ASSERT_EQ(d.obtener("1"), true);
+	d.definir("2", false);
+	ASSERT_TRUE(d.def("1"));
+	ASSERT_TRUE(d.def("2"));
+	ASSERT_FALSE(d.def("3"));
+	ASSERT_EQ(d.obtener("1"), true);
+	ASSERT_EQ(d.obtener("2"), false);
+	d.definir("1", false);
+	ASSERT_TRUE(d.def("1"));
+	ASSERT_TRUE(d.def("2"));
+	ASSERT_FALSE(d.def("3"));
+	ASSERT_EQ(d.obtener("1"), false);
+	ASSERT_EQ(d.obtener("2"), false);
+}
 
 #endif
 

@@ -7,6 +7,7 @@ template <class T>
             Multiconjunto();
             void agregar(T x);
             int ocurrencias(T x) const;
+            bool operator<=(Multiconjunto<T> otro) const;
 
         private:
             Diccionario<T, int> diccionario_;
@@ -33,4 +34,14 @@ int Multiconjunto<T>::ocurrencias(T x) const {
     } else {
         return 0;
     }
+}
+
+template<class T>
+bool Multiconjunto<T>::operator<=(Multiconjunto<T> otro) const {
+    for(T x: this->diccionario_.claves()){
+        if (this->ocurrencias(x) > otro.ocurrencias(x)){
+            return false;
+        }
+    }
+    return true;
 }

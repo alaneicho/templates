@@ -11,6 +11,7 @@ public:
     void definir(Clave k, Valor v);
     bool def(Clave k) const;
     Valor obtener(Clave k) const;
+    std::vector<Clave> claves() const;
 private:
 
     struct Asociacion {
@@ -57,6 +58,17 @@ Valor Diccionario<Clave, Valor>::obtener(Clave k) const {
             return _asociaciones[i].valor;
         }
     }
+}
+
+template<class Clave, class Valor>
+std::vector<Clave> Diccionario<Clave, Valor>::claves() const {
+    std::vector<Clave> claves;
+    for (Asociacion asociacion : this->_asociaciones){
+        claves.push_back(asociacion.clave);
+    }
+    std::sort(claves.begin(), claves.end());
+
+    return claves;
 }
 
 

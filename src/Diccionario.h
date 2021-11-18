@@ -12,6 +12,7 @@ public:
 	void definir(Clave k, Valor v);
 	bool def(Clave k) const;
 	Valor obtener(Clave k) const;
+    std::vector<Clave> claves() const;
 private:
 
 	struct Asociacion {

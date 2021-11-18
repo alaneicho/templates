@@ -1,5 +1,7 @@
 #include <cassert>
 #include "Diccionario.h"
+#include "DIccionario.hpp"
+
 
 Diccionario::Diccionario() {
 }
@@ -32,5 +34,5 @@ Valor Diccionario::obtener(Clave k) const {
 			return _asociaciones[i].valor;
 		}
 	}
-	assert(false);
+	//assert(false);
 }
